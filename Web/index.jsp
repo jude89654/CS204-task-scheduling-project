@@ -8,8 +8,8 @@
 </head>
 <body>
 <form action="input.jsp">
-	<p>INPUT NO OF WORKERS<input type="number" name="noOfWorkers" required="required"></p>
-	<p>INPUT NO OF TASKS<input type="number" name="noOfTasks" required="required"></p>
+	<p>INPUT NO OF WORKERS<input type="number" name="noOfWorkers" required="required" min="1"></p>
+	<p>INPUT NO OF TASKS<input type="number" name="noOfTasks" required="required" min="1"></p>
 	<p><input type="submit" value="submit"></p>
 </form>
 </body>
