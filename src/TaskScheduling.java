@@ -1,17 +1,23 @@
 import com.ust.model.*;
+
+import java.util.Arrays;
 import java.util.PriorityQueue;
 public class TaskScheduling {
 	public TaskScheduling(TaskBean[] tasks, WorkerBean[] workers){
 		
 		String scheduleArray[][]=new String[workers.length][maxLength(tasks)];
 		PriorityQueue<TaskBean> q = new PriorityQueue<TaskBean>();
-		
+	
 		for(TaskBean task:tasks){
 			q.add(task);
 		}
 		
-		while(q.peek()!=null){
-			if()
+		int currentWorkerIndex=0;
+		while(q.isEmpty()){
+			if(!workers[currentWorkerIndex%workers.length]
+					.getSchedule()[q.peek().getStart()].equals("none")){
+				
+			}
 		}
 	}
 	
@@ -41,4 +47,5 @@ public class TaskScheduling {
 		}
 		return false;
 	}
+	//public void setTask(WorkerBean )
 }

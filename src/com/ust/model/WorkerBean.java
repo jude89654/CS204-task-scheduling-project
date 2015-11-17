@@ -1,5 +1,7 @@
 package com.ust.model;
 
+import java.util.Arrays;
+
 public class WorkerBean {
 	private String Name;
 	private String[] skills;
@@ -15,6 +17,7 @@ public class WorkerBean {
 	}
 	public void setSkills(String[] skills) {
 		this.skills = skills;
+		Arrays.fill(this.skills,"NONE");
 	}
 	public String[] getSchedule() {
 		return schedule;
