@@ -25,4 +25,7 @@ public class WorkerBean {
 	public void setSchedule(String[] schedule) {
 		this.schedule = schedule;
 	}
+	public void addSchedule(int start, int end, String task){
+		Arrays.fill(schedule, start, end-1, task);
+	}
 }

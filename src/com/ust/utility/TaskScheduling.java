@@ -1,3 +1,4 @@
+package com.ust.utility;
 import com.ust.model.*;
 
 import java.util.Arrays;

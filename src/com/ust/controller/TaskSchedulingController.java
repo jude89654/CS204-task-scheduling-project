@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ust.model.TaskBean;
 import com.ust.model.WorkerBean;
 import com.ust.utility.BeanHelper;
+import com.ust.utility.TaskScheduling;
 
 /**
  * Servlet implementation class TaskSchedulingCompute
@@ -63,6 +64,9 @@ public class TaskSchedulingController extends HttpServlet {
 			
 		}
 		
+		WorkerBean schedule[]=TaskScheduling.scheduleTasks(task,work);
+		request.setAttribute("schedule", schedule);
+		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
 	}
 	
 
