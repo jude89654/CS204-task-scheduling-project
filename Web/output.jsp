@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.ust.model.WorkerBean" %>
+<%@page import="com.ust.model.TaskBean" %>
 <%@page import="com.ust.utility.TaskScheduling" %>
 <% 
-    	WorkerBean worker[]=(WorkerBean[]) request.getAttribute("workers");
-		int maxLength=TaskScheduling.maxLength(tasks)
+    	WorkerBean workers[]=(WorkerBean[]) request.getAttribute("schedule");
+		TaskBean tasks[]=(TaskBean[]) request.getAttribute("task");
+		int maxLength=TaskScheduling.maxLength(tasks);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,6 +15,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+<table border="1" width="100%" cellpadding="3" cellspacing="3">
+		<tr><th>EMPLOYEE</th>
+<%
+	for(int x=0;x<maxLength;x++){
+%>
+<td>DAY <%=x%></td>
+<%} %>
+</tr>
+<%for(WorkerBean worker:workers) {%>
+<tr>
+<td><%=worker.getName()%></td>
+<%for(int x=0;x<maxLength;x++){ %>
+<td><%=worker.getSchedule()[x]%></td>
+<%} }%>
+</table>
 
 </body>
 </html>

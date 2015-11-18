@@ -17,15 +17,16 @@ public class WorkerBean {
 	}
 	public void setSkills(String[] skills) {
 		this.skills = skills;
-		Arrays.fill(this.skills,"NONE");
+		
 	}
 	public String[] getSchedule() {
 		return schedule;
 	}
 	public void setSchedule(String[] schedule) {
 		this.schedule = schedule;
+		Arrays.fill(this.schedule,"NONE");
 	}
 	public void addSchedule(int start, int end, String task){
-		Arrays.fill(schedule, start, end-1, task);
+		Arrays.fill(this.schedule, start, end, task);
 	}
 }

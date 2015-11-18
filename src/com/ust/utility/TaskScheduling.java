@@ -12,17 +12,21 @@ public class TaskScheduling {
 		for (TaskBean task : tasks) {
 			q.add(task);
 		}
+		initializeSchedule(workers,tasks);
 
-
-		while (q.isEmpty()) {
+		while (!q.isEmpty()) {
+			
 				TaskBean currentTask = q.remove();
-				int currentStart = currentTask.getStart();
+				
+				int currentStart = currentTask.getStart()-1;
 				int currentLast = currentTask.getLast();
 				for(WorkerBean worker: workers){
+					System.out.println(worker.getName());
 					if(isSkill(currentTask,worker)
 							&worker.getSchedule()[currentTask.getStart()]
 									.equals("NONE")){
-						worker.addSchedule(currentStart-1, currentLast-2, currentTask.getTaskName());
+						worker.addSchedule(currentStart, currentLast, currentTask.getTaskName());
+						for(String x:worker.getSchedule()){System.out.println(x);}
 						break;
 					}else
 					{

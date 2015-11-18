@@ -66,7 +66,8 @@ public class TaskSchedulingController extends HttpServlet {
 		
 		WorkerBean schedule[]=TaskScheduling.scheduleTasks(task,work);
 		request.setAttribute("schedule", schedule);
-		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+		request.setAttribute("task",task);
+		getServletContext().getRequestDispatcher("/output.jsp").forward(request, response);
 	}
 	
 
