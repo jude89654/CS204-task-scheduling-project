@@ -17,16 +17,17 @@
 <body>
 <table border="1" width="100%" cellpadding="3" cellspacing="3">
 		<tr><th>EMPLOYEE</th>
-<%
+<%//para sa paggawa ng headers ng days
 	for(int x=0;x<maxLength;x++){
 %>
-<td>DAY <%=x%></td>
+<!-- para magsimula ang day sa 1 kaya may x+1 -->
+<td>DAY <%=x+1%></td>
 <%} %>
 </tr>
-<%for(WorkerBean worker:workers) {%>
+<%for(WorkerBean worker:workers) {%><!-- paglagay ng pangalan ng worker sa table -->
 <tr>
 <td><%=worker.getName()%></td>
-<%for(int x=0;x<maxLength;x++){ %>
+<%for(int x=0;x<maxLength;x++){ %><!-- paglagay ng schedule ng worker sa table -->
 <td><%=worker.getSchedule()[x]%></td>
 <%} }%>
 </table>

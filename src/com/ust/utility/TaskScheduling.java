@@ -17,19 +17,25 @@ public class TaskScheduling {
 		while (!q.isEmpty()) {
 			
 				TaskBean currentTask = q.remove();
-				
+				//kukunin kung kailan nagsisimula ang task
 				int currentStart = currentTask.getStart()-1;
-				int currentLast = currentTask.getLast();
+				//kukunin kung kailan magtatapos ang task
+				int currentLast = currentTask.getLast()-1;
+				
+				//yung for loop checheck kung sino ang eligible sa task na iyon
 				for(WorkerBean worker: workers){
-					System.out.println(worker.getName());
+					
 					if(isSkill(currentTask,worker)
 							&worker.getSchedule()[currentTask.getStart()]
 									.equals("NONE")){
+						
+						//dagdag sa schedule niya kung ganun
 						worker.addSchedule(currentStart, currentLast, currentTask.getTaskName());
-						for(String x:worker.getSchedule()){System.out.println(x);}
+						//break na kung may nakita ng eligible
 						break;
 					}else
 					{
+						//tuloy lang ulit for loop kung walang nakita
 					}
 				}
 			}
