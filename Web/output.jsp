@@ -13,8 +13,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 </head>
 <body>
+<div id="title">
+<h1  class="text-center">Task allocation application</h1>
+</div>
+<div  id="tables">
 <table border="1" width="100%" cellpadding="3" cellspacing="3">
 		<tr><th>EMPLOYEE</th>
 <%//para sa paggawa ng headers ng days
@@ -31,6 +37,6 @@
 <td><%=worker.getSchedule()[x]%></td>
 <%} }%>
 </table>
-
+</div>
 </body>
 </html>
