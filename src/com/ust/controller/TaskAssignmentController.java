@@ -40,8 +40,8 @@ public class TaskAssignmentController extends HttpServlet {
 		String[] assignment = new String[workers.length];
 		
 		for(int x=0;x<workers.length;x++){
-			assignment[x]=work[Integer.parseInt(""+result.charAt(x))].getName()
-					+" - "+ tasks[x]+" "+work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
+			assignment[x]="WORKER:"+work[Integer.parseInt(""+result.charAt(x))].getName()
+					+" -ASSIGNED TASK:"+ tasks[x]+" "+work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
 		}
 		for(String z: assignment){
 			System.out.println(z);
@@ -49,7 +49,8 @@ public class TaskAssignmentController extends HttpServlet {
 		
 		
 		request.setAttribute("assignment", assignment);
-		
+		getServletContext().getRequestDispatcher("/outputassignment.jsp").forward(
+				request, response);
 		
 	}
 	private static int[] processLine(String[] strings) {
