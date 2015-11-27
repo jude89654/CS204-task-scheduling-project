@@ -16,6 +16,8 @@
 <%for(int x=0; x<assignment.length;x++){ %>
 <p align="center"><%=assignment[x] %></p>
 <%}%>
+
+<p>TOTAL COSTS: <%=request.getAttribute("num") %></p>
 </div>
 <a href="index.jsp" class="btn">back to index</a>
 </body>

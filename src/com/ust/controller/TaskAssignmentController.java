@@ -38,17 +38,17 @@ public class TaskAssignmentController extends HttpServlet {
 		String result = TaskAssignment.AssignTasks(work, tasks);
 		
 		String[] assignment = new String[workers.length];
-		
+		int num=0;
 		for(int x=0;x<workers.length;x++){
 			assignment[x]="WORKER:"+work[Integer.parseInt(""+result.charAt(x))].getName()
-					+" -ASSIGNED TASK:"+ tasks[x]+" "+work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
+					+" ASSIGNED TASK:"+ tasks[x]+" TIME:"+work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
+			num+=work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
 		}
-		for(String z: assignment){
-			System.out.println(z);
-		}
+		
 		
 		
 		request.setAttribute("assignment", assignment);
+		request.setAttribute("num",num);
 		getServletContext().getRequestDispatcher("/outputassignment.jsp").forward(
 				request, response);
 		
