@@ -39,15 +39,14 @@ public class Permutations {
         tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
-    }
-/*
+    }/*
     public static void main(String[] args) {
-        String letters = args[0];
+        String letters = "ABCD";
         ArrayList<String> result = new ArrayList<String>();
         permute(letters,result);
         for (String s: result) {
             System.out.println(s);
         
-    }*/
+    }}*/
 
 }

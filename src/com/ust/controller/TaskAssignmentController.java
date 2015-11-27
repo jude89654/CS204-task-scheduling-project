@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ust.model.WorkerBean;
 import com.ust.utility.BeanHelper;
+import com.ust.utility.TaskAssignment;
 
 /**
  * Servlet implementation class TaskAssignmentController
@@ -26,7 +27,7 @@ public class TaskAssignmentController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String workers[] =request.getParameterValues("workers");
-		String tasks[] = request.getParameterValues("task");
+		String tasks[] = request.getParameterValues("tasks");
 		
 		WorkerBean[] work= new WorkerBean[workers.length];
 		
@@ -34,7 +35,20 @@ public class TaskAssignmentController extends HttpServlet {
 			work[x] = BeanHelper.getInstance(workers[x],
 					processLine(request.getParameterValues("task" + x)));
 		}
+		String result = TaskAssignment.AssignTasks(work, tasks);
 		
+		String[] assignment = new String[workers.length];
+		
+		for(int x=0;x<workers.length;x++){
+			assignment[x]=work[Integer.parseInt(""+result.charAt(x))].getName()
+					+" - "+ tasks[x]+" "+work[Integer.parseInt(""+result.charAt(x))].getEfficiency()[x];
+		}
+		for(String z: assignment){
+			System.out.println(z);
+		}
+		
+		
+		request.setAttribute("assignment", assignment);
 		
 		
 	}

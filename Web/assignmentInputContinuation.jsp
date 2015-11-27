@@ -40,7 +40,7 @@ String[] tasks = request.getParameterValues("tasks");
 				for (int y = 0; y < tasks.length; y++) {
 			%>
 				<%=tasks[y]%><input type="number" min="1"
-				name="task<%=x%>" value="<%=tasks[y]%>" /><br>
+				name="task<%=x%>" /><br>
 			<%
 				}
 			%>
@@ -48,6 +48,8 @@ String[] tasks = request.getParameterValues("tasks");
 			<%
 				}
 			%>
+			
+<input type="submit" value="submit"/>
 </form>
 
 </body>
