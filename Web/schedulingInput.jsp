@@ -43,7 +43,7 @@
 				}
 			%>
 		
-		<p>
+		<p align="center">
 			<input type="submit" class="btn" />
 	</form>
 </div>

@@ -49,6 +49,6 @@
 		</table>
 	</div>
 
-<a href="index.jsp">back to index</a>
+<a href="index.jsp" class="btn">back to index</a>
 </body>
 </html>

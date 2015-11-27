@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,12 +14,14 @@
 %>
 <form action="assignmentInputContinuation.jsp">
 <%for(int x=1;x<=number;x++){ %>
-<p>INPUT NAME FOR WORKER<%=x%>:<input type="text" name="workers"required="required"/></p>
+<div><p align="center">INPUT NAME FOR WORKER<%=x%>:<input id="spaces" type="text" name="workers"required="required"/></p>
 <%} %>
 <%for(int x=1;x<=number;x++){ %>
-<p>INPUT NAME FOR TASK<%=x%>:<input type="text" name="tasks" required="required"/></p>
+<p align="center">INPUT NAME FOR TASK<%=x%>:<input type="text" id="spaces" name="tasks" required="required"/></p>
 <%} %>
-<input type="submit" value="submit"/>
+
+<p align="center"><input type="submit" class="btn" value="submit"/></p>
+</div>
 </form>
 </body>
 </html>

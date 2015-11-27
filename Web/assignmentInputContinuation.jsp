@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -30,26 +32,27 @@ String[] tasks = request.getParameterValues("tasks");
 		<%
 			}
 		%>
+		<div>
+		<h2 align="center">INPUT HOW FAST EACH WORKER CAN DO THAT TASK</h2>
 		
-		<h2>INPUT HOW FAST EACH WORKER CAN DO THAT TASK</h2>
 		<%
 			for (int x = 0; x < workers.length; x++) {
 		%>
-		<p><%=workers[x]%>: <p>
+		<p align="center"  ><%=workers[x]%>: <p align="center">
 			<%
 				for (int y = 0; y < tasks.length; y++) {
 			%>
 				<%=tasks[y]%><input type="number" min="1"
-				name="task<%=x%>" /><br>
+				name="task<%=x%>" id="spaces" value="<%=tasks[y]%>" /><br>
 			<%
 				}
 			%>
-				</p>
+				</p></div>
 			<%
 				}
 			%>
-			
-<input type="submit" value="submit"/>
+			<p align="center">
+			<input type="submit" class="btn" value="submit">
 </form>
 
 </body>

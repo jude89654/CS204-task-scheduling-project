@@ -4,16 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>ASSIGNMENT RESULT</h1>
+<div>
+<h1 align="center">ASSIGNMENT RESULT</h1>
 <%String assignment[]=(String[])request.getAttribute("assignment"); %>
 
 <%for(int x=0; x<assignment.length;x++){ %>
-<p><%=assignment[x] %></p>
+<p align="center"><%=assignment[x] %></p>
 <%}%>
-
-<a href="index.jsp">back to index</a>
+</div>
+<a href="index.jsp" class="btn">back to index</a>
 </body>
 </html>
