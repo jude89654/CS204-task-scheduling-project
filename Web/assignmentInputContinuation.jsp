@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd ">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -13,7 +13,7 @@
 String[] workers = request.getParameterValues("workers");
 String[] tasks = request.getParameterValues("tasks");
 %>
-
+<div>
 <form action="assignmentProcess.html">
 	
 		<%
@@ -32,7 +32,7 @@ String[] tasks = request.getParameterValues("tasks");
 		<%
 			}
 		%>
-		<div>
+		
 		<h2 align="center">INPUT HOW FAST EACH WORKER CAN DO THAT TASK</h2>
 		
 		<%
@@ -43,17 +43,17 @@ String[] tasks = request.getParameterValues("tasks");
 				for (int y = 0; y < tasks.length; y++) {
 			%>
 				<%=tasks[y]%><input type="number" min="1"
-				name="task<%=x%>" id="spaces"/><br>
+				name="task<%=x%>" id="spaces" value="<%=tasks[y]%>" /><br>
 			<%
 				}
 			%>
-				</p></div>
+				</p>
 			<%
 				}
 			%>
 			<p align="center">
 			<input type="submit" class="btn" value="submit">
 </form>
-
+</div>
 </body>
 </html>
