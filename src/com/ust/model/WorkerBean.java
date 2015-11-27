@@ -6,6 +6,8 @@ public class WorkerBean {
 	private String Name;
 	private String[] skills;
 	private String schedule[];
+	private int[] efficiency;
+	
 	public String getName() {
 		return Name;
 	}
@@ -29,4 +31,11 @@ public class WorkerBean {
 	public void addSchedule(int start, int end, String task){
 		Arrays.fill(this.schedule, start, end, task);
 	}
+	public int[] getEfficiency() {
+		return efficiency;
+	}
+	public void setEfficiency(int[] efficiency) {
+		this.efficiency = efficiency;
+	}
+	
 }

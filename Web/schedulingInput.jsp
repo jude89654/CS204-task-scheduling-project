@@ -18,12 +18,12 @@
 				.getParameter("noOfWorkers"));
 		int noOfTasks = Integer.parseInt(request.getParameter("noOfTasks"));
 	%>
-	<form action="inputcontinuation.jsp">
+	<form action="schedulingInputContinuation.jsp">
 		<h2>PLEASE INPUT NAME FOR: </h2>
 		<%
 			for (int x = 0; x < noOfWorkers; x++) {
 		%>
-		<p>
+		<p><!-- getting the names of workers -->
 			WORKER 
 			<%=x + 1%>:	<input type="text" name="workers" required="required" id="spaces" class="tb"/>
 		<p>
@@ -35,7 +35,7 @@
 		<%
 			for (int x = 0; x < noOfTasks; x++) {
 		%>
-		<p>
+		<p><!-- getting the names of tasks -->
 			TASK
 			<%=x + 1%>:	<input type="text" name="tasks" required="required" id="spaces" class="tb"/>
 		<p>

@@ -20,4 +20,11 @@ public class BeanHelper {
 		bean.setSkills(skills);
 		return bean;
 	}
+	
+	public static WorkerBean getInstance(String name, int efficiency[]){
+		WorkerBean bean= new WorkerBean();
+		bean.setName(name);
+		bean.setEfficiency(efficiency);
+		return bean;
+	}
 }

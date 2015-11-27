@@ -18,7 +18,7 @@
 		String[] tasks = request.getParameterValues("tasks");
 	%>
 
-	<form action="process.html" method="post">
+	<form action="schedulingProcess.html" method="post">
 		
 		<%
 			for (String worker : workers) {

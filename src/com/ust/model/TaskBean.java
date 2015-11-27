@@ -4,6 +4,7 @@ public class TaskBean implements Comparable<TaskBean>{
 	private String taskName;
 	private int start;
 	private int last;
+	private boolean isScheduled= false;
 	public String getTaskName() {
 		return taskName;
 	}
@@ -26,5 +27,11 @@ public class TaskBean implements Comparable<TaskBean>{
 		if(getStart()>=o.getStart())
 			return 1;
 		else return -1;
+	}
+	public boolean isScheduled() {
+		return isScheduled;
+	}
+	public void setScheduled(boolean isScheduled) {
+		this.isScheduled = isScheduled;
 	}
 }

@@ -1,6 +1,7 @@
 package com.ust.utility;
 import com.ust.model.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
@@ -15,7 +16,7 @@ public class TaskScheduling {
 		initializeSchedule(workers,tasks);
 
 		while (!q.isEmpty()) {
-			
+				System.out.println(q.peek().getStart());
 				TaskBean currentTask = q.remove();
 				//kukunin kung kailan nagsisimula ang task
 				int currentStart = currentTask.getStart()-1;
@@ -26,11 +27,13 @@ public class TaskScheduling {
 				for(WorkerBean worker: workers){
 					
 					if(isSkill(currentTask,worker)
-							&worker.getSchedule()[currentTask.getStart()]
-									.equals("NONE")){
+							&(worker.getSchedule()[currentTask.getStart()]
+									.equals("NONE"))){
 						
 						//dagdag sa schedule niya kung ganun
 						worker.addSchedule(currentStart, currentLast, currentTask.getTaskName());
+						//ischedule na 
+						currentTask.setScheduled(true);
 						//break na kung may nakita ng eligible
 						break;
 					}else
@@ -67,5 +70,14 @@ public class TaskScheduling {
 				return true;
 		}
 		return false;
+	}
+	public static TaskBean[] getUnfinishedTasks(TaskBean[] tasks){
+		ArrayList<TaskBean> unfinishedTasks = new ArrayList<TaskBean>();
+		for(TaskBean gawain: tasks){
+			if(!gawain.isScheduled()){
+				unfinishedTasks.add(gawain);
+			}
+		}
+		return unfinishedTasks.toArray(new TaskBean[unfinishedTasks.size()]);
 	}
 }
